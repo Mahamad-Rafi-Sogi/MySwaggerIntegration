@@ -20,6 +20,7 @@ public class EmployeeController {
 
     
     @GetMapping("/hello")
+    @Operation(summary = "welcome Api", description = "welcome to rafi api", operationId = "1-myFunction")
     public String myFunction() {
         System.out.println("welcome to Rafi Page..!!!");
         return "welcome to Rafi Page..!!!";
@@ -27,14 +28,14 @@ public class EmployeeController {
 
     // Employee management endpoints
     @PostMapping("/employees")
-    @Operation(summary = "Create a new employee", description = "Creates a new employee record", operationId = "operation1")
+    @Operation(summary = "Create a new employee", description = "Creates a new employee record", operationId = "3-createEmployee")
     @ApiResponse(responseCode = "200", description = "Employee created successfully")
     public Employee createEmployee(@RequestBody Employee employee) {
         return employeeService.createEmployee(employee);
     }
 
     @GetMapping("/employees")
-    @Operation(summary = "Get all employees", description = "Returns list of all employees")
+    @Operation(summary = "Get all employees", description = "Returns list of all employees", operationId = "2-getAllEmployees")
     public List<Employee> getAllEmployees() {
         return employeeService.getAllEmployees();
     }

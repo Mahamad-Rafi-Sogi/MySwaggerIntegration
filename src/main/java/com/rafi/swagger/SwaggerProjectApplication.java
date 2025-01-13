@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-@OpenAPIDefinition(info = @Info(title = "Rafi's Swagger API", version = "v1", description = "Swagger API Documentation"))
+@OpenAPIDefinition(info = @Info(title = "Rafi's Swagger API", version = "v1", description = "by Rafi"))
 @SpringBootApplication
 @EntityScan("com.rafi.swagger.entity")
 @EnableJpaRepositories("com.rafi.swagger.repository")
