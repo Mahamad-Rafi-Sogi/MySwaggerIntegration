@@ -18,7 +18,7 @@ public class EmployeeController {
     @Autowired
     private EmployeeService employeeService;
 
-    // Original hello endpoint
+    
     @GetMapping("/hello")
     public String myFunction() {
         System.out.println("welcome to Rafi Page..!!!");
@@ -27,7 +27,7 @@ public class EmployeeController {
 
     // Employee management endpoints
     @PostMapping("/employees")
-    @Operation(summary = "Create a new employee", description = "Creates a new employee record")
+    @Operation(summary = "Create a new employee", description = "Creates a new employee record", operationId = "operation1")
     @ApiResponse(responseCode = "200", description = "Employee created successfully")
     public Employee createEmployee(@RequestBody Employee employee) {
         return employeeService.createEmployee(employee);
